@@ -7,7 +7,7 @@
 # PMAT Labs Notes by Enzo Saez - @hashp4 🔬
 
 
-This repository contains my personal notes and answers to the challenges from the Practical Malware Analysis & Triage course created by <a href="https://github.com/HuskyHacks" @HuskyHacks</a>. This is mainly for everyone following the course or just for people interested by the topic. Feel free to take a look. (:
+This repository contains my personal notes and answers to the challenges from the Practical Malware Analysis & Triage course created by [@HuskyHacks](https://github.com/HuskyHacks). This is mainly for everyone following the course or just for people interested by the topic. Feel free to take a look. (:
 
 > https://github.com/HuskyHacks/PMAT-labs
 
@@ -39,22 +39,22 @@ The structure of this repository maps to the course videos. The top directory co
 - [x] 1-1. BasicStaticAnalysis
 - [x] 1-2. BasicDynamicAnalysis
 - [x] 1-3. Challenge-SillyPutty
-- [] 3-1. GonePhishing-MalDocAnalysis
-- [] 3-2. WhatTheShell-ShellCodeAnalysis
-- [] 3-3. OffScript-ScriptMalware
-- [] 3-4. StaySharp-CSharpMalware
-- [] 3-5. GoTime-GoMalware
-- [] 3-6. Mobile-Malware-Android
-- [] 5-1. Automation-BlueJupyter
-- [] 5-2. RuleWriting
-- [] 5-3. Report Writing
+- [ ] 3-1. GonePhishing-MalDocAnalysis
+- [ ] 3-2. WhatTheShell-ShellCodeAnalysis
+- [ ] 3-3. OffScript-ScriptMalware
+- [ ] 3-4. StaySharp-CSharpMalware
+- [ ] 3-5. GoTime-GoMalware
+- [ ] 3-6. Mobile-Malware-Android
+- [ ] 5-1. Automation-BlueJupyter
+- [ ] 5-2. RuleWriting
+- [ ] 5-3. Report Writing
 
 ---
 
 ## 🔗 Socials
 If you'd like to reach out, please do not hesitate to hit me up ! 
 
-Twitter : <a href="https://twitter.com/hashp4_" @hashp4_</a>
+Twitter : [@hashp4_](https://twitter.com/hashp4_)
 
 Website : https://hashp4.fr/
 
@@ -62,6 +62,6 @@ Website : https://hashp4.fr/
 
 ### ❤️ Credits
 
-This README is greatly inspired by <a href="https://github.com/deFr0ggy" Frog Man (@deFr0ggy)</a>. Do not hesitate to have a look at his work! 
+This README is greatly inspired by [Frog Man (@deFr0ggy)](https://github.com/deFr0ggy). Do not hesitate to have a look at his work! 
 
 ---
