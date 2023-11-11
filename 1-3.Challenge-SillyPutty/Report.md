@@ -134,11 +134,17 @@ Command line:	powershell.exe -nop -w hidden -noni -ep bypass "&([scriptblock]::c
 ```
 
 I can see this is a Powershell command with differents options. Let's detail each one of them. 
+
 - `-nop` : Equivalent for `-NoProfile`. Allows to NOT load the Windows Powershell profile. A PowerShell profile is a script that runs when PowerShell is started to customize your environment. Since it's not needed to execute a malicious payload, it's better for an attacker to bypass it and avoid any scripts that could prevent its execution. 
+
 - `-w hidden` : Equivalent for `-WindowStyle`. Allows to hide the window when executing the command (but this shows a window for a while, which is why we're seeing a blue powershell window briefly while detonating the malware).
+
 - `-noni` : Equivalent for `-NonInteractive`. Allows to NOT display an interactive interface for the user.
+
 - `-ep bypass` : Equivalent for `-ExecutionPolicy`. Allows to bypass the execution policy. In this case, it is necessary to execute the payload (which is a powershell script).
+
 - `System.IO.Compression.GzipStream()` : Methods and properties used to compress and decompress data flows in gzip data format. In this case, it means the payload is compressed in gzip.
+
 - `FromBase64String()` : Method to convert a string into base64. In this case, the string is equivalent to the payload.
 
 I decided to decode the payload using `Cyberchef`, already present on the FlareVM. To do so, I pasted it under the `Input` section. Then, under the `Recipe` section, I dragged `From Base64` and `Gunzip` to get the content.
