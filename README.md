@@ -15,7 +15,7 @@ This repository contains my personal notes and answers to the challenges from th
 
 ## 🧭 Repository Structure
 
-The structure of this repository maps to the course videos. The top directory contains the name of the section. If the folder is not a challenge, there will be my personal notes (named *Notes.md*). If the folder is a challenge, there will be my malware analysis report (named *Report.md*) For example:
+The structure of this repository maps to the course videos. The top directory contains the name of the section. If the folder is not a challenge, there will be my personal notes (named *Notes.md*). If the folder is a challenge, there will be my malware analysis report (named *Report.md*) and its PDF version (*Report.pdf*) For example:
 ```
 📦PMAT-Labs-Notes
  ┣ 📜README.md
@@ -26,7 +26,9 @@ The structure of this repository maps to the course videos. The top directory co
  ┣ 📂1-2.BasicDynamicAnalysis
  ┃ ┗ 📜Notes.md
  ┣ 📂1-3.Challenge-SillyPutty
- ┃ ┗ 📜Report.md
+ ┃ ┣ 📂img
+ ┃ ┣ 📜Report.md
+ ┃ ┗ 📜Report.pdf
  ┃ 📂...
 ...
 ```
