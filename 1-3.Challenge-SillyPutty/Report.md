@@ -1,4 +1,4 @@
-!()[img/putty-logo-icon.png]
+![](img/putty-logo-icon.png)
 
 | Difficulty | Start Date & Time  | Finish Date & Time |
 | ---------- | ------------------ | ------------------ |
@@ -36,7 +36,7 @@ MD5: 334a10500feb0f3444bf2e86ab2e76da
 
 To get the architecture of `putty.exe`, I used `PEStudio`. Then, by clicking on the root directory, the architecture information will be available. 
 
-![[img/pestudio-architecture.png]]
+![](img/pestudio-architecture.png)
 
 As I can see, the architecture is `32-bit`.
 
@@ -44,7 +44,7 @@ As I can see, the architecture is `32-bit`.
 
 Yes there is, as you can see on the screenshot below. ([The VirusTotal result can be found here](https://www.virustotal.com/gui/file/0c82e654c09c8fd9fdf4899718efa37670974c9eec5a8fc18a167f93cea6ee8))
 
-![[virustotal-result.png]]
+![](virustotal-result.png)
 
 I can see the file is flagged as malicious. However, I won't dwell on VirusTotal. The aim here is to find the information by myself, as if the sample was still unknown.
 
@@ -58,18 +58,18 @@ To pull the strings out of this binary, I used `FLOSS` with the command `floss p
 
 To inspect the Import Address Table (IAT), I can again use `PEStudio`. Clicking on the `imports` section allows us to check the imported functions. 
 
-![[pestudio-IAT-check.png]]
+![](pestudio-IAT-check.png)
 
 As I said in the previous answer, the binary correspond to the legitime PuTTY binary with probably a backdoor in it. Thus, the inspection of the IAT doesn't reveal anything interesting. However, from my perspective as a junior analyst, it's quite appealing to import functions to add, delete and enumerate registry keys, even if in this case it's legitimate. 
 
-![[suspicious-IAT.png]]
+![](suspicious-IAT.png)
 
 There is also functions like `GetClipboardData` and `ShellExecuteA` that are being imported. But those can also be legitimate for the regular usage of PuTTY.
 #### 6) Is it likely that this binary is packed?
 
 It doesn't seem to be packed at first sight as I can read the IAT completely. But, I can verify it is not packed by comparing `Virtual Size` and `Size of Raw Data` of `putty.exe`. To do so, I have to open our binary in `PEView`. Then, by clicking on `IMAGE_SECTION_HEADER .text`, I can see the values I need.
 
-![[not-packed.png]]
+![](not-packed.png)
 
 |                  | Size (in Hex) | Size (in Dec) |
 | ---------------- | ------------- | ------------- |
@@ -94,11 +94,11 @@ As I can see, the difference between the two is almost null. Since the size are 
 
 During the first detonation, I can see a blue terminal prompt popping briefly on the screen. It seems to be a PowerShell command prompt. At the same time, the PuTTY GUI opens.
 
-![[powershell-prompt-pop.png]]
+![](powershell-prompt-pop.png)
 
 There doesn't seem to be any differences between a detonation with and without internet simulation. During my test, I launched `Wireshark` and found an interesting DNS request to the following domain : `bonus2.corporatebonusapplication.local`. 
 
-![[wireshark-dns-query.png]]
+![](wireshark-dns-query.png)
 
 I can notice there is also some TCP RST packets. I don't really know what to do with that information but I thought it would be great to keep it in case of.
 
@@ -109,11 +109,11 @@ In order to get the main payload that is initiated at detonation, I decided to u
 1. `Process Name` *contains* `putty.exe`
 2. `Details` *contains* `Command`
 
-![[procmon-filter.png]]
+![](procmon-filter.png)
 
 Then, I executed the malicious binary. As expected, I got some interesting results appearing. 
 
-![[filter-results.png]]
+![](filter-results.png)
 
 I noticed that Powershell was called with the PID `5820`. I expanded the `Detail` section in order to get more informations about what is being executed.
 
@@ -139,7 +139,7 @@ I can see this is a Powershell command with differents options. Let's detail eac
 
 I decided to decode the payload using `Cyberchef`, already present on the FlareVM. To do so, I pasted it under the `Input` section. Then, under the `Recipe` section, I dragged `From Base64` and `Gunzip` to get the content.
 
-![[cyberchef-base64-decode.png]]
+![](cyberchef-base64-decode.png)
 
 You can find the full decoded content below :
 
@@ -300,7 +300,7 @@ I can use host-based telemetry to identify the DNS record, port and protocol by 
 1. `Process Name` *contains* `powershell.exe`
 2. `Operation` *contains* `TCP`
 
-![[ps-tcp-connections.png]]
+![](ps-tcp-connections.png)
 
 I can see all of the needed informations on the above `ProcMon` screenshot.
 
@@ -320,14 +320,14 @@ In order to spawn a reverse shell, I need to complete 2 operations :
 
 That said, command execution doesn't seems to work.
 
-![[no-ssl.png]]
+![](no-ssl.png)
 
 Indeed, I saw previously that it used SSL/TLS encryption mechanism, justifying all those weird characters we're seeing on the terminal. To fix that problem, I slightly modified my `netcat` command to support SSL :
 ```
 ncat --ssl -lvnp 8443
 ```
 
-![[working-revshell.png]]
+![](working-revshell.png)
 
 Getting this working reverse shell conclude this challenge. 
 
