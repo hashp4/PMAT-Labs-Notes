@@ -1,3 +1,5 @@
+# Report - Malware Analysis - SillyPutty.exe
+
 ![](img/putty-logo-icon.png)
 
 | Difficulty | Start Date & Time  | Finish Date & Time |
