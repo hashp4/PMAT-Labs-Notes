@@ -1,4 +1,4 @@
-![[putty-logo-icon.png]]
+![[img/putty-logo-icon.png]]
 
 | Difficulty | Start Date & Time  | Finish Date & Time |
 | ---------- | ------------------ | ------------------ |
@@ -36,7 +36,7 @@ MD5: 334a10500feb0f3444bf2e86ab2e76da
 
 To get the architecture of `putty.exe`, I used `PEStudio`. Then, by clicking on the root directory, the architecture information will be available. 
 
-![[pestudio-architecture.png]]
+![[img/pestudio-architecture.png]]
 
 As I can see, the architecture is `32-bit`.
 
