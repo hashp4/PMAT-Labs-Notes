@@ -1,4 +1,4 @@
-![[img/putty-logo-icon.png]]
+!()[img/putty-logo-icon.png]
 
 | Difficulty | Start Date & Time  | Finish Date & Time |
 | ---------- | ------------------ | ------------------ |
