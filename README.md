@@ -15,15 +15,11 @@ This repository contains my personal notes and answers to the challenges from th
 
 ## 🧭 Repository Structure
 
-The structure of this repository maps to the course videos. The top directory contains the name of the section. If the folder is not a challenge, there will be my personal notes (named *Notes.md*). If the folder is a challenge, there will be my malware analysis report (named *Report.md*) and its PDF version (*Report.pdf*) For example:
+The structure of this repository maps to the course videos. The top directory contains the name of the section. My notes will be under the `Course Notes` folder. For challenges, there will be my malware analysis report (named *Report.md*) and its PDF version (*Report.pdf*) For example:
 ```
 📦PMAT-Labs-Notes
  ┣ 📜README.md
- ┣ 📂0-1.HandlingAndSafety
- ┃ ┗ 📜Notes.md
- ┣ 📂1-1.BasicStaticAnalysis
- ┃ ┗ 📜Notes.md
- ┣ 📂1-2.BasicDynamicAnalysis
+ ┣ 📂Course Notes
  ┃ ┗ 📜Notes.md
  ┣ 📂1-3.Challenge-SillyPutty
  ┃ ┣ 📂img
@@ -41,12 +37,18 @@ The structure of this repository maps to the course videos. The top directory co
 - [x] 1-1. BasicStaticAnalysis
 - [x] 1-2. BasicDynamicAnalysis
 - [x] 1-3. Challenge-SillyPutty
-- [ ] 3-1. GonePhishing-MalDocAnalysis
-- [ ] 3-2. WhatTheShell-ShellCodeAnalysis
-- [ ] 3-3. OffScript-ScriptMalware
-- [ ] 3-4. StaySharp-CSharpMalware
-- [ ] 3-5. GoTime-GoMalware
-- [ ] 3-6. Mobile-Malware-Android
+- [X] 2-1. AdvancedStaticAnalysis-Assembly-Language-Decompiling-&-Disassembling-Malware
+- [X] 2-2. AdvancedDynamicAnalysis-Debugging-Malware
+- [X] 2-3. Challenge-SikoMode
+- [ ] 3-1. Binary-Patching-&-Anti-analysis
+- [ ] 3-2. Specialty Malware Classes 
+- [ ] 3-3. GonePhishing-MalDocAnalysis
+- [ ] 3-4. WhatTheShell-ShellCodeAnalysis
+- [ ] 3-5. OffScript-ScriptMalware
+- [ ] 3-6. StaySharp-CSharpMalware
+- [ ] 3-7. GoTime-GoMalware
+- [ ] 3-8. Mobile-Malware-Android
+- [ ] 3-9. The-Bossfight-Analyzing-Real-World-Malware-Samples
 - [ ] 5-1. Automation-BlueJupyter
 - [ ] 5-2. RuleWriting
 - [ ] 5-3. Report Writing
